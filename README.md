@@ -50,7 +50,7 @@ To use the Neo4j Docker image with the APOC plugin, follow the instructions belo
 ## Dataset
 
 The repository includes a dataset representing the schema of the COVID-19 spreading model presented in the "Partitioned Knoweldge Management"" article as shown in the following image:
-<img src="Images/Dataset.png" alt="Dataset" width="90%"/>
+<img src="Dataset.png" alt="Dataset" width="90%"/>
 
 
 ## Usage
@@ -61,7 +61,7 @@ To access the Neo4j browser, open [http://localhost:7474](http://localhost:7474)
 
 To programmatically interact with Neo4j, you can use any Neo4j driver compatible with the Neo4j version used in the Docker image. Configure the driver to connect to `localhost:7687` with the appropriate credentials.
 
-In this Docker container, you will find the four rules presented in the article that acts upon changes in the dataset.
+In this Docker container, you will find already installed in the Neo4j database the four rules presented in the article that acts upon changes in the dataset.
 
 ### Rule R1
 
