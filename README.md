@@ -127,8 +127,8 @@ WITH newNode, count(p) as n_patients
 CALL apoc.do.when(newNode:Mutation AND n_patients > 50 ,
 'MATCH (r:Region)-[]-(:Hospital)-[]-(newNode)
  MATCH (r)-[]-(:Hospital)-[]-(p:Patients)-[]-(:IcuPatient)
- WITH r, count(p) as tot_icuPat
- MATCH (r)-[]-(:Hospital)-[]-(p:Patients{admissionDate: date()})-[]-(:IcuPatient)
+ WITH newRel, r, count(p) as tot_icuPat
+ MATCH (r)-[]-(:Hospital)-[]-(p:Patients{admissionDate:newRel.admissionDate})-[]-(:IcuPatient)
  WITH r, tot_icuPat, count(p) today_icuPat
  WHERE toFloat(today_icuPat-tot_icuPat)/toFloat(tot_icuPat) > 0.1
  CREATE (:Alert{rule:'R4', hub:'C', datetime:dateTime(),Region:r.name,
