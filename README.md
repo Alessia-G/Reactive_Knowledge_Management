@@ -37,7 +37,7 @@ To use the Neo4j Docker image with the APOC plugin, follow the instructions belo
 6. Run the Neo4j container with the APOC plugin using the following command:
 
    ```bash
-   docker run --rm -p 7474:7474 -p 7687:7687 -v $PWD/data:/data --name reactive_knowledge -e NEO4JLABS_PLUGINS='["apoc"]' -e   NEO4J_apoc_trigger_enabled=true -e NEO4J_AUTH=none neo4j
+   docker run -p 7474:7474 -p 7687:7687 -v $PWD/data:/data --name reactive_knowledge -e NEO4JLABS_PLUGINS='["apoc"]' -e   NEO4J_apoc_trigger_enabled=true -e NEO4J_AUTH=none neo4j
    ```
     
    This command starts the Neo4j container and exposes the default Neo4j ports (7474 for HTTP and 7687 for Bolt). The Neo4j server will already contain the APOC plugin, the dataset and the installed PG-Triggers. 
