@@ -2,7 +2,7 @@
 Github repository for the article 'Reactive Knowledge Management' (Ceri, Bernasconi, Gagliardi)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This GitHub repository contains the instructions and the data needed to deploy a Neo4j demo in which are installed the four rules presented in the related article . The repository wants demonstrates the feasibility of the proposal outlined in the "Partitioned Knoweldge Management" article.
+The repository provides the material to demonstrate the feasibility of the proposal outlined in the "Partitioned Knoweldge Management" article. Specifically, it contains the instructions and the data needed to deploy a Neo4j demo in which the four reactive rules presented in the article are presented. 
 
 ## Table of Contents
 
@@ -18,9 +18,7 @@ Neo4j is a powerful graph database that offers a flexible data model and advance
 
 The APOC plugin (Awesome Procedures on Cypher) extends Neo4j's functionality by providing a collection of useful procedures and functions. It offers additional operations and utilities that are not available out of the box, making it easier to perform complex graph operations and data manipulations.
 
-This repository serves as a proof of concept, showcasing the implementation of the proposed approach in the "Partitioned Knoweldge Management" article using Neo4j with the APOC plugin.
-
-In this tedbed we refer to the Neo4j 5.10 version and the APOC version 5.10.0 .
+This repository serves as a proof of concept, showcasing the implementation of the proposed approach in the "Partitioned Knoweldge Management" article using Neo4j with the APOC plugin. In this testbed we refer to the Neo4j 5.10 version and the APOC version 5.10.0.
 
 ## Installation
 
@@ -61,7 +59,7 @@ To access the Neo4j browser, open [http://localhost:7474](http://localhost:7474)
 
 To programmatically interact with Neo4j, you can use any Neo4j driver compatible with the Neo4j version used in the Docker image. Configure the driver to connect to `localhost:7687` with the appropriate credentials.
 
-In this Docker container, you will find already installed in the Neo4j database the four rules presented in the article that acts upon changes in the dataset.
+In this Docker container, you will find already installed in the Neo4j database the four rules presented in the article that act upon changes in the dataset.
 
 ### Rule R1
 
