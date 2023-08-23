@@ -18,7 +18,7 @@ Neo4j is a powerful graph database that offers a flexible data model and advance
 
 The APOC plugin (Awesome Procedures on Cypher) extends Neo4j's functionality by providing a collection of useful procedures and functions. It offers additional operations and utilities that are not available out of the box, making it easier to perform complex graph operations and data manipulations.
 
-This repository serves as a proof of concept, showcasing the implementation of the proposed approach in the "Partitioned Knoweldge Management" article using Neo4j with the APOC plugin. In this testbed we refer to the Neo4j 5.10 version and the APOC version 5.10.0.
+This repository serves as a proof of concept, showcasing the implementation of the proposed approach in the "Partitioned Knoweldge Management" article using Neo4j with the APOC plugin. In this testbed we refer to the Neo4j 5.10 version and the APOC version 5.10.
 
 ## Installation
 
@@ -38,7 +38,7 @@ To use the Neo4j Docker image with the APOC plugin, follow the instructions belo
    docker run -p 7474:7474 -p 7687:7687 -v $PWD/data:/data --name reactive_knowledge -e NEO4JLABS_PLUGINS='["apoc"]' -e   NEO4J_apoc_trigger_enabled=true -e NEO4J_AUTH=none neo4j
    ```
     
-   This command starts the Neo4j container and exposes the default Neo4j ports (7474 for HTTP and 7687 for Bolt). The Neo4j server will already contain the APOC plugin, the dataset and the installed PG-Triggers. 
+   This command starts the Neo4j container and exposes the default Neo4j ports (7474 for HTTP and 7687 for Bolt). The Neo4j server will already contain the APOC plugin, the dataset and the installed apoc.triggers. 
 
 8. Access the Neo4j browser by opening http://localhost:7474 in your web browser. 
 
@@ -73,7 +73,6 @@ CALL apoc.do.when(newNode:Mutation,
   description:'New critical mutation'}', 
 '',{newNode:newNode}) YIELD value RETURN count(*)",
 {phase: 'afterAsync'});
-MATCH (n:Lineage{lineage:'B.1.1.7'}) SET n.whoDesignation = 'Delta' RETURN * 
 ```
 
 ### Rule R2
@@ -91,7 +90,6 @@ CALL apoc.do.when(newNode:Mutation,
   description:'Region-based count of unassigned sequences above threshold'}', 
 '',{newNode:newNode}) YIELD value RETURN count(*)",
 {phase: 'afterAsync'});
-
 ```
 
 ### Rule R3
@@ -112,7 +110,6 @@ CALL apoc.do.when(newNode:Mutation,
   critical-effect-mutation above threshold'}', 
 '',{newNode:newNode}) YIELD value RETURN count(*)",
 {phase: 'afterAsync'});
-
 ```
 
 ### Rule R4
